@@ -86,7 +86,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-12 left-6 md:left-12 max-w-[320px] hidden md:block z-20"
+        className="absolute bottom-12 left-6 md:left-12 max-w-[240px] md:max-w-[320px] z-20"
       >
         <div className="flex items-center gap-3 mb-4">
           <div className="w-1.5 h-1.5 bg-red-500" />
