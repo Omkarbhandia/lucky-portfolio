@@ -293,9 +293,6 @@ const PROJECTS: Project[] = [
     strategy: "THE STRATEGY:\nUsing extreme scale shifts and audio ducking to reset the viewer's attention span every 3 seconds.",
     isVertical: true,
     rowSpan: true,
-    strategy: "THE STRATEGY:\nUsing extreme scale shifts and audio ducking to reset the viewer's attention span every 3 seconds.",
-    isVertical: true,
-    rowSpan: true,
   },
 ];
 
