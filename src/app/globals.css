@@ -1,26 +1,42 @@
+@import url('https://api.fontshare.com/v2/css?f%5B%5D=quilon@700,600,500,400,300&display=swap');
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #F5F5F7;
+  --font-quilon: 'Quilon', sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.font-display {
+  font-family: var(--font-quilon) !important;
+}
+
+* {
+  box-sizing: border-box;
+  /* Hide native cursor completely per requirements */
+  cursor: none !important;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: white;
+  color: black;
+}
+
+/* Hide scrollbar for cinematic minimalism */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
