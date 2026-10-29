@@ -50,6 +50,96 @@ const PROJECTS: Project[] = [
     colSpan: true,
     vaultOnly: true,
   },
+  // ── NEW WORK (Oct 2026) ──────────────────────────────────
+  {
+    id: "reel_drop",
+    title: "The Drop",
+    client: "Brand Campaign",
+    format: "Vertical Reel",
+    tech: "Premiere Pro",
+    videoSrc: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253309/1000257091_logo_yon1ix.mp4",
+    poster: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253309/1000257091_logo_yon1ix.jpg",
+    strategy: "THE STRATEGY:\nHeavy bass-synced transitions that lock every visual cut to the low-end frequency, creating an irresistible rhythmic pull that forces the viewer to stay through every beat drop.",
+    isVertical: true,
+    rowSpan: true,
+  },
+  {
+    id: "reel_spice",
+    title: "The Spice",
+    client: "Spice Tailor",
+    format: "Vertical Reel",
+    tech: "Premiere Pro",
+    videoSrc: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253359/Spice_Tailor_Reel_2_dty0am.mp4",
+    poster: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253359/Spice_Tailor_Reel_2_dty0am.jpg",
+    strategy: "THE STRATEGY:\nCinematic storytelling meets product showcase. Every frame builds a sensory narrative around the brand, transforming a product reel into an immersive taste journey.",
+    isVertical: true,
+    rowSpan: true,
+  },
+  {
+    id: "ad_ajinkyatara",
+    title: "Ajinkyatara Plottings",
+    client: "Ajinkyatara Plottings",
+    format: "Brand Film",
+    tech: "Premiere Pro / After Effects",
+    videoSrc: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253803/WhatsApp_Video_2026-10-29_at_11.29.06_vdhzmm.mp4",
+    poster: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253803/WhatsApp_Video_2026-10-29_at_11.29.06_vdhzmm.jpg",
+    strategy: "THE STRATEGY:\nA full-scale brand advertisement engineered for maximum trust and conversion. Cinematic aerials and precise pacing designed to sell a lifestyle, not just a product.",
+    colSpan: true,
+    rowSpan: true,
+  },
+  {
+    id: "reel_curry",
+    title: "Curry Roots",
+    client: "Curry Roots",
+    format: "Vertical Reel",
+    tech: "Premiere Pro",
+    videoSrc: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253397/CurryRoots_Reel_2_mmspe2.mp4",
+    poster: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253397/CurryRoots_Reel_2_mmspe2.jpg",
+    strategy: "THE STRATEGY:\nAn immersive walkthrough that puts the viewer inside the space. Smooth tracking shots and deliberate pacing build authenticity and brand presence.",
+    isVertical: true,
+    rowSpan: true,
+    vaultOnly: true,
+  },
+  {
+    id: "reel_agf",
+    title: "AGF Story",
+    client: "AGF",
+    format: "Vertical Reel",
+    tech: "Premiere Pro",
+    videoSrc: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253800/WhatsApp_Video_2026-10-29_at_11.29.19_sdi5gh.mp4",
+    poster: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253800/WhatsApp_Video_2026-10-29_at_11.29.19_sdi5gh.jpg",
+    strategy: "THE STRATEGY:\nInformation-dense storytelling compressed into a snackable vertical format. Clear visual hierarchy and kinetic text ensure every data point lands with impact.",
+    isVertical: true,
+    rowSpan: true,
+    vaultOnly: true,
+  },
+  {
+    id: "reel_vatan_packaging",
+    title: "Vatan Packaging",
+    client: "Vatan",
+    format: "Vertical Reel",
+    tech: "Premiere Pro",
+    videoSrc: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253800/WhatsApp_Video_2026-10-29_at_11.31.42_pd9bsm.mp4",
+    poster: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253800/WhatsApp_Video_2026-10-29_at_11.31.42_pd9bsm.jpg",
+    strategy: "THE STRATEGY:\nA behind-the-scenes walkthrough that builds brand credibility by showcasing the manufacturing process. Raw, transparent footage that converts curiosity into trust.",
+    isVertical: true,
+    rowSpan: true,
+    vaultOnly: true,
+  },
+  {
+    id: "reel_vatan_making",
+    title: "Vatan Making",
+    client: "Vatan",
+    format: "Vertical Reel",
+    tech: "Premiere Pro",
+    videoSrc: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253796/WhatsApp_Video_2026-10-29_at_11.31.43_nhw2ec.mp4",
+    poster: "https://res.cloudinary.com/dw8qdtrhu/video/upload/v1793253796/WhatsApp_Video_2026-10-29_at_11.31.43_nhw2ec.jpg",
+    strategy: "THE STRATEGY:\nCapturing the hands-on craftsmanship of the production line. Close-up detail shots and process-driven pacing turn an industrial walkthrough into compelling content.",
+    isVertical: true,
+    rowSpan: true,
+    vaultOnly: true,
+  },
+  // ── END NEW WORK ─────────────────────────────────────────
   {
     id: "vlog1",
     title: "The Vision (Vlog 01)",
@@ -300,11 +390,16 @@ export default function WorksGrid({ limit, isArchivePage = false }: { limit?: nu
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filterCategories = ["All", "Vlogs", "Vertical Reels"];
+  const filterCategories = ["All", "Vlogs", "Vertical Reels", "Brand Films"];
 
   const filteredProjects = activeFilter === "All" 
     ? PROJECTS 
-    : PROJECTS.filter(p => activeFilter === "Vlogs" ? p.format === "Vlog Format" : p.format === "Vertical Reel");
+    : PROJECTS.filter(p => {
+        if (activeFilter === "Vlogs") return p.format === "Vlog Format";
+        if (activeFilter === "Vertical Reels") return p.format === "Vertical Reel";
+        if (activeFilter === "Brand Films") return p.format === "Brand Film";
+        return true;
+      });
 
   const displayedProjects = limit 
     ? filteredProjects.filter(p => !p.vaultOnly).slice(0, limit) 
